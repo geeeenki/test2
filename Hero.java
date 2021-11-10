@@ -13,7 +13,7 @@ public class Hero {
 	}
 	public String setName(String name) {
 		if(name.length()<3) {
-			throw new IllegalArgumentException("3文字未満です");
+			throw new IllegalArgumentException("3文字未満です！s");
 		}
 		if(name.length()>10) {
 			throw new IllegalArgumentException("10文字以上です");
