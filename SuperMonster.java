@@ -17,6 +17,7 @@ public class SuperMonster extends Monster{
 			 this.poison--;
 		 }else if((poison<=0)||(this.superAttackGage<=0)){
 			 throw new IllegalArgumentException("毒攻撃出来ません。");
+			 
 		 }
 	}
 

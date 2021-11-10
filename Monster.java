@@ -51,6 +51,7 @@ public class Monster {
 	
 	Monster(){
 		
+		
 	}
 	Monster(String name, int hp){
 		setName(name);
