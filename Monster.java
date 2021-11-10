@@ -11,7 +11,7 @@ public class Monster {
 	}
 	public String setName(String name) {
 		if(name.length()<3) {
-			throw new IllegalArgumentException("3文字未満です");
+			throw new IllegalArgumentException("3文字未満です!");
 		}
 		if(name.length()>10) {
 			throw new IllegalArgumentException("10文字以上です");

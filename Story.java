@@ -133,7 +133,6 @@ public class Story {
 		System.out.println();
 		b.super_mat();
 		System.out.println();
-		c.poison_attack();
 	}
 
 }
