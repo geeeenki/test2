@@ -59,9 +59,10 @@ public class Monster {
 	}
 	
 	
-	void attack() {
+	void attack(String name) {
 		System.out.println(this.getName() + "の攻撃!");
-		System.out.println(this.getAt() + "のダメージを与えた");
+		System.out.println(name +"に"+this.getAt() + "のダメージを与えた");
+		
 	}
 	void defense() {
 		System.out.println(this.getName() + "は守りを固めた！");

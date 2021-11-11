@@ -26,7 +26,9 @@ public class SuperMagician extends Magician{
 	public int getSuperMagicHp() {
 		return this.superMagicHp;
 	}
-	
+	public int setSuperMagicHp(int superMagicHp) {
+		return this.superMagicHp =superMagicHp;
+	}
 	public int getSuperMagicMp() {
 		return this.superMagicMp;
 	}
@@ -36,10 +38,11 @@ public class SuperMagician extends Magician{
 	public int getSuperMagicCount() {
 		return this.superMagicCount;
 	}
-	void super_mat() {
+
+	void super_mat(String name) {
 		System.out.println(this.getSuperMagicName() + "の超攻撃魔法!");
 		this.superMagicMp = getSuperMagicMp()-getSuperMagicCount();
-		System.out.println("敵にダメージを"+getSuperMagicAt()+"与えた");
+		System.out.println(name+"にダメージを"+getSuperMagicAt()+"与えた");
 		System.out.println("残りの魔力　" + this.getSuperMagicMp());
 	}
 

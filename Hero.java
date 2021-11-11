@@ -68,6 +68,7 @@ public class Hero {
 	void attack() {
 		System.out.println(this.getName() + "の攻撃!");
 		System.out.println("敵にダメージを" + getAt() + "与えた");
+		
 	}
 	void defense() {
 		System.out.println("勇者が防御した");
@@ -78,6 +79,10 @@ public class Hero {
 		System.out.println("勇者が回復した");
 		this.hp = this.getHp() + 10;
 		System.out.println("HPが10回復し、"+ this.getHp() + "になった");
+	}
+	
+	int hanntei() {
+		return -getAt();
 	}
 
 }

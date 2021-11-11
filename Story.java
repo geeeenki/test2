@@ -18,7 +18,7 @@ public class Story {
 		//h.at = scan.nextInt();		
 		h.setName("勇者１");
 		h.setHp(100);
-		h.setAt(10);
+		h.setAt(50);
 		h.setDf(50);
 		
 		System.out.println("勇者が誕生した");
@@ -73,8 +73,8 @@ public class Story {
 		//mg.mp = scan3.nextInt();
 		
 		mg.setName("マジシャン");
-		mg.setHp(100);
-		mg.setMagicAt(20);
+		mg.setHp(90);
+		mg.setMagicAt(30);
 		mg.setMp(50);
 		
 		System.out.println("魔法使いが誕生した");
@@ -92,7 +92,7 @@ public class Story {
 		SuperHero a = new SuperHero(h);
 		a.setName("スーパー勇者");
 		a.setHp(100);
-		a.setAt(20);
+		a.setAt(50);
 		a.setDf(100);
 		System.out.println("勇者が進化した");
 		System.out.println("名前　；" + a.getName());
@@ -112,8 +112,8 @@ public class Story {
 		
 		SuperMonster c = new SuperMonster();
 		c.setName("スーパーモンスター");
-		c.setHp(100);
-		c.setAt(10);
+		c.setHp(150);
+		c.setAt(30);
 		c.setDf(50);
 		System.out.println("モンスターが進化した");
 		System.out.println("名前　；" + c.getName());
@@ -125,19 +125,31 @@ public class Story {
 
 		System.out.println("----------------------");
 		
-		m.attack();
+		m.attack(a.getName());
+		System.out.println(a.getName()+"のHPは残り　" + a.setHp(a.getHp() - m.getAt()));
 		System.out.println();
-		a.attack();
+		
+		a.attack(c.getName());
+		System.out.println(c.getName()+"のHPは残り　" + c.setHp(c.getHp() - a.getSuperAt()));
 		System.out.println();
-		mg.mat();
+		
+		mg.mat(c.getName());
+		System.out.println(c.getName()+"のHPは残り　" + c.setHp(c.getHp() - mg.getMagicAt()));
 		System.out.println();
-		b.super_mat();
+		
+		c.poison_attack(a.getName());
+		System.out.println(a.getName()+"のHPは残り　" + a.setHp(a.getHp() - c.getAt()));
 		System.out.println();
-		c.poison_attack();
-		c.poison_attack();
-		c.poison_attack();
-		c.poison_attack();
-		c.poison_attack();
+		
+		c.poison_attack(b.getSuperMagicName());
+		System.out.println(b.getSuperMagicName()+"のHPは残り　" + b.setSuperMagicHp(b.getSuperMagicHp() - c.getAt()));
+		System.out.println();
+		
+		c.poison_attack(b.getSuperMagicName());
+		System.out.println(b.getSuperMagicName()+"のHPは残り　" + b.setSuperMagicHp(b.getSuperMagicHp() - c.getAt()));
+		System.out.println();
+		b.super_mat(c.getName());
+		System.out.println(c.getName()+"のHPは残り　" + c.setHp(c.getHp() - b.getSuperMagicAt()));
 	}
 
 }
