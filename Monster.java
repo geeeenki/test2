@@ -58,12 +58,10 @@ public class Monster {
 		setHp(hp);
 	}
 	
-	protected int attackGage = 0;
+	
 	void attack() {
-		this.attackGage++;
 		System.out.println(this.getName() + "の攻撃!");
 		System.out.println(this.getAt() + "のダメージを与えた");
-		System.out.println(this.attackGage);
 	}
 	void defense() {
 		System.out.println(this.getName() + "は守りを固めた！");
