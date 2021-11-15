@@ -65,9 +65,28 @@ public class Hero {
 	}
 	 
 	
-	void attack() {
+	void attack(Monster m) {
 		System.out.println(this.getName() + "の攻撃!");
-		System.out.println("敵にダメージを" + getAt() + "与えた");
+		System.out.println(m.getName()+"にダメージを" + getAt() + "与えた");
+		int hp = m.getHp()-this.getAt();
+		if(hp<=0) {
+			m.setHp(0);
+		}else {
+			m.setHp(hp);
+		}
+		
+		
+	}
+	void attack(SuperMonster c) {
+		System.out.println(this.getName() + "の攻撃!");
+		System.out.println(c.getName()+"にダメージを" + getAt() + "与えた");
+		int hp = c.getHp()-this.getAt();
+		if(hp<=0) {
+			c.setHp(0);
+		}else {
+			c.setHp(hp);
+		}
+		
 		
 	}
 	void defense() {

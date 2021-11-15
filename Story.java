@@ -125,31 +125,63 @@ public class Story {
 
 		System.out.println("----------------------");
 		
-		m.attack(a.getName());
-		System.out.println(a.getName()+"のHPは残り　" + a.setHp(a.getHp() - m.getAt()));
-		System.out.println();
 		
-		a.attack(c.getName());
-		System.out.println(c.getName()+"のHPは残り　" + c.setHp(c.getHp() - a.getSuperAt()));
-		System.out.println();
+		while(true) {
+			a.attack(m);
+			System.out.println();
+			if(m.getHp()<=0 && c.getHp()<=0) {
+				System.out.println("モンスターは全滅した");
+				break;
+			}
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+				System.out.println("ヒーローは全滅した");
+				break;
+			}
+			
+			m.attack(mg);
+			System.out.println();
+			if(m.getHp()<=0 && c.getHp()<=0) {
+				System.out.println("モンスターは全滅した");
+				break;
+			}
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+				System.out.println("ヒーローは全滅した");
+				break;
+			}
+			b.super_mat(c);
+			System.out.println();
+			System.out.println(c.getHp());
+			if(m.getHp()<=0 && c.getHp()<=0) {
+				System.out.println("モンスターは全滅した");
+				break;
+			}
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+				System.out.println("ヒーローは全滅した");
+				break;
+			}
+			m.attack(h);
+			System.out.println();
+			if(m.getHp()<=0 && c.getHp()<=0) {
+				System.out.println("モンスターは全滅した");
+				break;
+			}
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+				System.out.println("ヒーローは全滅した");
+				break;
+			}
+			c.poison_attack(h);
+			System.out.println();
+			if(m.getHp()<=0 && c.getHp()<=0) {
+				System.out.println("モンスターは全滅した");
+				break;
+			}
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+				System.out.println("ヒーローは全滅した");
+				break;
+			}
+		}
+		System.out.println(h.getHp()+" "+a.getHp()+" "+mg.getHp()+" "+b.getSuperMagicHp());
 		
-		mg.mat(c.getName());
-		System.out.println(c.getName()+"のHPは残り　" + c.setHp(c.getHp() - mg.getMagicAt()));
-		System.out.println();
 		
-		c.poison_attack(a.getName());
-		System.out.println(a.getName()+"のHPは残り　" + a.setHp(a.getHp() - c.getAt()));
-		System.out.println();
-		
-		c.poison_attack(b.getSuperMagicName());
-		System.out.println(b.getSuperMagicName()+"のHPは残り　" + b.setSuperMagicHp(b.getSuperMagicHp() - c.getAt()));
-		System.out.println();
-		
-		c.poison_attack(b.getSuperMagicName());
-		System.out.println(b.getSuperMagicName()+"のHPは残り　" + b.setSuperMagicHp(b.getSuperMagicHp() - c.getAt()));
-		System.out.println();
-		b.super_mat(c.getName());
-		System.out.println(c.getName()+"のHPは残り　" + c.setHp(c.getHp() - b.getSuperMagicAt()));
-	}
-
+		}	
 }

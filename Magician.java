@@ -63,10 +63,16 @@ public class Magician {
 	}
 	
 	
-	void mat(String name) {
+	void mat(Monster m) {
 		System.out.println(this.getName() + "の魔法攻撃!");
 		this.mp = this.getMp() - this.getMagicCount();
-		System.out.println(name+"にダメージを"+this.getMagicAt()+"与えた");
+		System.out.println(m.getName()+"にダメージを"+this.getMagicAt()+"与えた");
+		int hp = m.getHp()-this.getMagicAt();
+		if(hp<=0) {
+			m.setHp(0);
+		}else {
+			m.setHp(hp);
+		}
 	}
 	void mheal() {
 		System.out.println(this.getName() + "の回復魔法!");

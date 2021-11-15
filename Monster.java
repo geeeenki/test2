@@ -2,7 +2,7 @@ package rpg1;
 
 public class Monster {
 	private String name;
-	private int hp;
+	private int hp =0;
 	private int at;
 	private int df;
 	
@@ -59,10 +59,48 @@ public class Monster {
 	}
 	
 	
-	void attack(String name) {
+	void attack(Hero h) {
 		System.out.println(this.getName() + "の攻撃!");
-		System.out.println(name +"に"+this.getAt() + "のダメージを与えた");
+		System.out.println(h.getName() +"に"+this.getAt() + "のダメージを与えた");
+		int hp = h.getHp()-this.getAt();
+		if(hp<=0) {
+			h.setHp(0);
+		}else {
+			h.setHp(hp);
+		}
 		
+	}
+	void attack(SuperHero a) {
+		System.out.println(this.getName() + "の攻撃!");
+		System.out.println(a.getName() +"に"+this.getAt() + "のダメージを与えた");
+		int hp = a.getHp()-this.getAt();
+		if(hp<=0) {
+			a.setHp(0);
+		}else {
+			a.setHp(hp);
+		}
+		
+	}
+	void attack(Magician mg) {
+		System.out.println(this.getName() + "の攻撃!");
+		System.out.println(mg.getName() +"に"+this.getAt() + "のダメージを与えた");
+		int hp = mg.getHp()-this.getAt();
+		if(hp<=0) {
+			mg.setHp(0);
+		}else {
+			mg.setHp(hp);
+		}
+		
+	}
+	void attack(SuperMagician b) {
+		System.out.println(this.getName() + "の攻撃!");
+		System.out.println(b.getName() +"に"+this.getAt() + "のダメージを与えた");
+		int hp = b.getHp()-this.getAt();
+		if(hp<=0) {
+			b.setSuperMagicHp(0);
+		}else {
+			b.setSuperMagicHp(hp);
+		}
 	}
 	void defense() {
 		System.out.println(this.getName() + "は守りを固めた！");
