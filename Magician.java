@@ -1,36 +1,12 @@
 package rpg1;
 
-public class Magician {
-	private String name;
-	private int hp;
+public class Magician extends Character{
+	
 	protected int mp;
 	private int magicAt;
 	private int magicCount = 5;
 	
-	public String getName() {
-		return this.name;
-	}
-	public String setName(String name) {
-		if(name.length()<3) {
-			throw new IllegalArgumentException("3文字未満です!");
-		}
-		if(name.length()>10) {
-			throw new IllegalArgumentException("10文字以上です");
-		}
-		if(name == null) {
-			throw new NullPointerException("addressがnullです。");
-		}
-		return this.name = name;
-	}
-	public int getHp() {
-		return this.hp;
-	}
-	public int setHp(int hp) {
-		if(hp<0) {
-			throw new IllegalArgumentException("負の数は入力できません");
-		}
-		return this.hp = hp;
-	}
+	
 	
 	public int getMp() {
 		return this.mp;
@@ -63,7 +39,7 @@ public class Magician {
 	}
 	
 	
-	void mat(Monster m) {
+	public void attack(Monster m) {
 		System.out.println(this.getName() + "の魔法攻撃!");
 		this.mp = this.getMp() - this.getMagicCount();
 		System.out.println(m.getName()+"にダメージを"+this.getMagicAt()+"与えた");
@@ -74,6 +50,18 @@ public class Magician {
 			m.setHp(hp);
 		}
 	}
+	
+	public void attack(SuperMonster c) {
+		System.out.println(this.getName() + "の魔法攻撃!");
+		this.mp = this.getMp() - this.getMagicCount();
+		System.out.println(c.getName()+"にダメージを"+this.getMagicAt()+"与えた");
+		int hp = c.getHp()-this.getMagicAt();
+		if(hp<=0) {
+			c.setHp(0);
+		}else {
+			c.setHp(hp);
+		}
+	}
 	void mheal() {
 		System.out.println(this.getName() + "の回復魔法!");
 		this.mp = this.getMp() - this.getMagicCount();
@@ -81,10 +69,17 @@ public class Magician {
 		System.out.println("魔法使いはHPを20回復し、" + this.hp +"になった");
 	}
 	void heal() {
-		System.out.println("魔法使いが回復した");
+		System.out.println(this.getName() +"が回復した");
 		this.hp = this.getHp() + 10;
 		System.out.println("HPが10回復し、"+ this.hp +"になった");
 	}
+	@Override
+	public void defense() {
+		System.out.println(this.getName()+"が防御した");
+		this.df = this.getDf() + 10;
+		System.out.println("勇者が防御力が10UPし、" + this.getDf() + "になった");
+	}
+	
 	
 
 }

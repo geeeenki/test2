@@ -11,9 +11,7 @@ public class SuperHero extends Hero {
 	public int getSuperAt() {
 		return this.superAt;
 	}
-	void attack(Monster m){
-		super.attack(m);
-		super.attack(m);
+	public void attack(Monster m){
 		System.out.println(this.getName() + "は2回攻撃した!");
 		System.out.println(m.getName() + "にダメージを合計" + this.getSuperAt() + "与えた");
 		int hp = m.getHp()-this.getSuperAt();
@@ -23,15 +21,13 @@ public class SuperHero extends Hero {
 			m.setHp(hp);
 		}
 	}
-	void attack(SuperMonster c){
-		super.attack(c);
-		super.attack(c);
+	public void attack(SuperMonster c){
 		System.out.println(this.getName() + "は2回攻撃した!");
 		System.out.println(c.getName() + "にダメージを合計" + this.getSuperAt() + "与えた");
 		int hp = c.getHp()-this.getSuperAt();
 		if(hp<=0) {
 			c.setHp(0);
-		}else {
+		}else{
 			c.setHp(hp);
 		}
 	}

@@ -1,14 +1,11 @@
 package rpg1;
 
 public class SuperMonster extends Monster{
-	protected int poison = 3;
+	private int poison = 3;
 	
 	
 	SuperMonster(){}
 	
-	SuperMonster(Monster m){
-		
-	}
 	
 	
 	
