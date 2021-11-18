@@ -74,13 +74,13 @@ public class Story {
 		
 		mg.setName("マジシャン");
 		mg.setHp(100);
-		mg.setMagicAt(30);
+		mg.setAt(30);
 		mg.setMp(50);
 		
 		System.out.println("魔法使いが誕生した");
 		System.out.println("名前　；" + mg.getName());
 		System.out.println("体力　；" + mg.getHp());
-		System.out.println("攻撃力　；" + mg.getMagicAt());
+		System.out.println("攻撃力　；" + mg.getAt());
 		System.out.println("魔力　；" + mg.getMp());
 		System.out.println();
 		
@@ -102,12 +102,12 @@ public class Story {
 		System.out.println();
 		
 		SuperMagician b = new SuperMagician(mg);
-		b.setSuperMagicName("スーパーマジシャン");
+		b.setName("スーパーマジシャン");
 		System.out.println("魔法使いが進化した");
-		System.out.println("名前　；" + b.getSuperMagicName());
-		System.out.println("体力　；" + b.getSuperMagicHp());
-		System.out.println("攻撃力　；" + b.getSuperMagicAt());
-		System.out.println("魔力　；" + b.getSuperMagicMp());
+		System.out.println("名前　；" + b.getName());
+		System.out.println("体力　；" + b.getHp());
+		System.out.println("攻撃力　；" + b.getAt());
+		System.out.println("魔力　；" + b.getMp());
 		System.out.println();
 		
 		SuperMonster c = new SuperMonster();
@@ -128,6 +128,7 @@ public class Story {
 		
 		while(true) {
 			h.attack(m);
+			b.defense();
 			mikata_hp(h,a,mg,b);
 			teki_hp(m,c);
 			hanntei(h,a,mg,b,m,c);
@@ -136,7 +137,7 @@ public class Story {
 				System.out.println("モンスターは全滅した");
 				break;
 			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
 				System.out.println("ヒーローは全滅した");
 				break;
 			}
@@ -150,7 +151,7 @@ public class Story {
 				System.out.println("モンスターは全滅した");
 				break;
 			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
 				System.out.println("ヒーローは全滅した");
 				break;
 			}
@@ -164,7 +165,7 @@ public class Story {
 				System.out.println("モンスターは全滅した");
 				break;
 			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
 				System.out.println("ヒーローは全滅した");
 				break;
 			}
@@ -178,7 +179,7 @@ public class Story {
 				System.out.println("モンスターは全滅した");
 				break;
 			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
 				System.out.println("ヒーローは全滅した");
 				break;
 			}
@@ -192,7 +193,7 @@ public class Story {
 				System.out.println("モンスターは全滅した");
 				break;
 			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getSuperMagicHp()<=0) {
+			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
 				System.out.println("ヒーローは全滅した");
 				break;
 			}
@@ -206,7 +207,7 @@ public class Story {
 		System.out.println(h.getName()+"の残りHP　："+h.getHp());
 		System.out.println(a.getName()+"の残りHP　："+a.getHp());
 		System.out.println(mg.getName()+"の残りHP　："+mg.getHp());
-		System.out.println(b.getSuperMagicName()+"の残りHP　："+b.getSuperMagicHp());
+		System.out.println(b.getName()+"の残りHP　："+b.getHp());
 	}
 	static void teki_hp(Monster m, SuperMonster c) {
 		System.out.println(m.getName()+"の残りHP　："+m.getHp());
@@ -223,8 +224,8 @@ public class Story {
 		if(mg.getHp()==0) {
 			System.out.println(mg.getName()+"は倒された");
 		}
-		if(b.getSuperMagicHp()==0) {
-			System.out.println(b.getSuperMagicName()+"は倒された");
+		if(b.getHp()==0) {
+			System.out.println(b.getName()+"は倒された");
 		}
 		if(m.getHp()==0) {
 			System.out.println(m.getName()+"は倒された");

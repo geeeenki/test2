@@ -47,14 +47,10 @@ public class Hero extends Character{
 		
 		
 	}
-	public void defense() {
-		System.out.println("勇者が防御した");
-		this.df = this.getDf() + 10;
-		System.out.println("勇者が防御力が10UPし、" + this.getDf() + "になった");
-	}
+	
 	void heal() {
 		System.out.println("勇者が回復した");
-		this.hp = this.getHp() + 10;
+		setHp(this.getHp() + 10);
 		System.out.println("HPが10回復し、"+ this.getHp() + "になった");
 	}
 	

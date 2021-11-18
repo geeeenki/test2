@@ -53,14 +53,10 @@ public class Monster extends Creature{
 		System.out.println(b.getName() +"に"+this.getAt() + "のダメージを与えた");
 		int hp = b.getHp()-this.getAt();
 		if(hp<=0) {
-			b.setSuperMagicHp(0);
+			b.setHp(0);
 		}else {
-			b.setSuperMagicHp(hp);
+			b.setHp(hp);
 		}
 	}
-	public void defense() {
-		System.out.println(this.getName() + "は守りを固めた！");
-		this.df = this.getDf() + 10;
-		System.out.println("防御力が10上がった");
-	}
+	
 }

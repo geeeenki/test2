@@ -17,17 +17,12 @@ public class Magician extends Character{
 		}
 		return this.mp = mp;
 	}
-	public int getMagicAt() {
-		return this.magicAt;
-	}
-	public int setMagicAt(int magicAt) {
-		if(magicAt<0) {
-			throw new IllegalArgumentException("負の数は入力できません");
-		}
-		return this.magicAt = magicAt;
-	}
+	
 	public int getMagicCount() {
 		return this.magicCount;
+	}
+	public int setMagicCount(int magicCount) {
+		return this.magicCount = magicCount;
 	}
 	
 	Magician(){
@@ -42,8 +37,8 @@ public class Magician extends Character{
 	public void attack(Monster m) {
 		System.out.println(this.getName() + "の魔法攻撃!");
 		this.mp = this.getMp() - this.getMagicCount();
-		System.out.println(m.getName()+"にダメージを"+this.getMagicAt()+"与えた");
-		int hp = m.getHp()-this.getMagicAt();
+		System.out.println(m.getName()+"にダメージを"+this.getAt()+"与えた");
+		int hp = m.getHp()-this.getAt();
 		if(hp<=0) {
 			m.setHp(0);
 		}else {
@@ -54,8 +49,8 @@ public class Magician extends Character{
 	public void attack(SuperMonster c) {
 		System.out.println(this.getName() + "の魔法攻撃!");
 		this.mp = this.getMp() - this.getMagicCount();
-		System.out.println(c.getName()+"にダメージを"+this.getMagicAt()+"与えた");
-		int hp = c.getHp()-this.getMagicAt();
+		System.out.println(c.getName()+"にダメージを"+this.getAt()+"与えた");
+		int hp = c.getHp()-this.getAt();
 		if(hp<=0) {
 			c.setHp(0);
 		}else {
@@ -73,12 +68,7 @@ public class Magician extends Character{
 		this.hp = this.getHp() + 10;
 		System.out.println("HPが10回復し、"+ this.hp +"になった");
 	}
-	@Override
-	public void defense() {
-		System.out.println(this.getName()+"が防御した");
-		this.df = this.getDf() + 10;
-		System.out.println("勇者が防御力が10UPし、" + this.getDf() + "になった");
-	}
+	
 	
 	
 
