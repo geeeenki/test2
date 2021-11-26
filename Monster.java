@@ -9,9 +9,11 @@ public class Monster extends Creature{
 		
 		
 	}
-	Monster(String name, int hp){
+	Monster(String name, int hp, int at, int df){
 		setName(name);
 		setHp(hp);
+		setAt(at);
+		setDf(df);
 	}
 	
 	

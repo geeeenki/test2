@@ -53,8 +53,7 @@ public abstract class Character {
 	}
 	
 	
-	public abstract void attack(Monster m);
-	public abstract void attack(SuperMonster c);
+	public abstract void attack(Creature[] cr);
 	public void defense() {
 		System.out.println(this.getName()+"が防御した");
 		setDf(this.getDf() + 10);

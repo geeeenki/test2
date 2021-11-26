@@ -4,7 +4,12 @@ public class SuperMonster extends Monster{
 	private int poison = 3;
 	
 	
-	SuperMonster(){}
+	SuperMonster(String name, int hp, int at, int df){
+		setName(name);
+		setHp(hp);
+		setAt(at);
+		setDf(df);
+	}
 	
 	
 	

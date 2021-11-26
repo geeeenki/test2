@@ -1,239 +1,94 @@
 package rpg1;
 
-//import java.util.Scanner;
 public class Story {
 
+
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
-		//Scanner scan = new Scanner(System.in);
+	
 		
-		Hero h = new Hero();
-		//System.out.println("勇者の名前を設定してください");
-		//h.name = scan.nextLine();
+		Character[] ca = new Character[4];
 		
-		//System.out.println("勇者の体力を設定してください");
-		//h.hp = scan.nextInt();
-		
-		//System.out.println("勇者の攻撃力を設定してください");
-		//h.at = scan.nextInt();		
-		h.setName("勇者１");
-		h.setHp(100);
-		h.setAt(50);
-		h.setDf(50);
-		
-		System.out.println("勇者が誕生した");
-		System.out.println("名前　；" + h.getName());
-		System.out.println("体力　；" + h.getHp());
-		System.out.println("攻撃力　；" + h.getAt());
-		System.out.println("防御力　；" + h.getDf());
-		System.out.println();
-		
-		
-		//Scanner scan2 = new Scanner(System.in);
-		
-		Monster m = new Monster();
-		//System.out.println("モンスターの名前を設定してください");
-		//m.name = scan2.nextLine();
-		
-		//System.out.println("モンスターの体力を設定してください");
-		//m.hp = scan2.nextInt();
-		
-		//System.out.println("モンスターの攻撃力を設定してください");
-		//m.at = scan2.nextInt();
-		
-		//System.out.println("モンスターの防御力を設定してください");
-		//m.df = scan2.nextInt();
-		m.setName("モンスター");
-		m.setHp(100);
-		m.setAt(10);
-		m.setDf(100);
-		
-		
-		System.out.println("モンスターが誕生した");
-		System.out.println("名前　；" + m.getName());
-		System.out.println("体力　；" + m.getHp());
-		System.out.println("攻撃力　；" + m.getAt());
-		System.out.println("防御力　；" + m.getDf());
-		System.out.println();
-		
-		
-		//Scanner scan3 = new Scanner(System.in);
-		
-		Magician mg = new Magician("ブラックマジシャン",100);
-		//System.out.println("魔法使いの名前を設定してください");
-		//mg.name = scan3.nextLine();
-
-		//System.out.println("魔法使いの体力を設定してください");
-		//mg.hp = scan3.nextInt();
-		
-		//System.out.println("魔法使いの攻撃力を設定してください");
-		//mg.at = scan3.nextInt();
-		
-		//System.out.println("魔法使いの魔力を設定してください");
-		//mg.mp = scan3.nextInt();
-		
-		mg.setName("マジシャン");
-		mg.setHp(100);
-		mg.setAt(30);
-		mg.setMp(50);
-		
-		System.out.println("魔法使いが誕生した");
-		System.out.println("名前　；" + mg.getName());
-		System.out.println("体力　；" + mg.getHp());
-		System.out.println("攻撃力　；" + mg.getAt());
-		System.out.println("魔力　；" + mg.getMp());
-		System.out.println();
-		
-		//scan.close();
-		//scan2.close();
-		//scan3.close();
-		
-		
-		SuperHero a = new SuperHero(h);
-		a.setName("スーパー勇者");
-		a.setHp(100);
-		a.setAt(50);
-		a.setDf(100);
-		System.out.println("勇者が進化した");
-		System.out.println("名前　；" + a.getName());
-		System.out.println("体力　；" + a.getHp());
-		System.out.println("攻撃力　；" + a.getAt());
-		System.out.println("防御力　；" + a.getDf());
-		System.out.println();
-		
-		SuperMagician b = new SuperMagician(mg);
-		b.setName("スーパーマジシャン");
-		System.out.println("魔法使いが進化した");
-		System.out.println("名前　；" + b.getName());
-		System.out.println("体力　；" + b.getHp());
-		System.out.println("攻撃力　；" + b.getAt());
-		System.out.println("魔力　；" + b.getMp());
-		System.out.println();
-		
-		SuperMonster c = new SuperMonster();
-		c.setName("スーパーモンスター");
-		c.setHp(150);
-		c.setAt(30);
-		c.setDf(50);
-		System.out.println("モンスターが進化した");
-		System.out.println("名前　；" + c.getName());
-		System.out.println("体力　；" + c.getHp());
-		System.out.println("攻撃力　；" + c.getAt());
-		System.out.println("魔力　；" + c.getDf());
-		System.out.println();
-		
-
-		System.out.println("----------------------");
-		
-		
-		while(true) {
-			h.attack(m);
-			b.defense();
-			mikata_hp(h,a,mg,b);
-			teki_hp(m,c);
-			hanntei(h,a,mg,b,m,c);
-			System.out.println();
-			if(m.getHp()<=0 && c.getHp()<=0) {
-				System.out.println("モンスターは全滅した");
-				break;
-			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
-				System.out.println("ヒーローは全滅した");
-				break;
-			}
-			
-			m.attack(mg);
-			mikata_hp(h,a,mg,b);
-			teki_hp(m,c);
-			hanntei(h,a,mg,b,m,c);
-			System.out.println();
-			if(m.getHp()<=0 && c.getHp()<=0) {
-				System.out.println("モンスターは全滅した");
-				break;
-			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
-				System.out.println("ヒーローは全滅した");
-				break;
-			}
-			
-			a.attack(c);
-			mikata_hp(h,a,mg,b);
-			teki_hp(m,c);
-			hanntei(h,a,mg,b,m,c);
-			System.out.println();
-			if(m.getHp()<=0 && c.getHp()<=0) {
-				System.out.println("モンスターは全滅した");
-				break;
-			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
-				System.out.println("ヒーローは全滅した");
-				break;
-			}
-			
-			m.attack(h);
-			mikata_hp(h,a,mg,b);
-			teki_hp(m,c);
-			hanntei(h,a,mg,b,m,c);
-			System.out.println();
-			if(m.getHp()<=0 && c.getHp()<=0) {
-				System.out.println("モンスターは全滅した");
-				break;
-			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
-				System.out.println("ヒーローは全滅した");
-				break;
-			}
-			
-			c.poison_attack(h);
-			mikata_hp(h,a,mg,b);
-			teki_hp(m,c);
-			hanntei(h,a,mg,b,m,c);
-			System.out.println();
-			if(m.getHp()<=0 && c.getHp()<=0) {
-				System.out.println("モンスターは全滅した");
-				break;
-			}
-			if(h.getHp()<=0 && a.getHp()<=0 && mg.getHp()<=0 && b.getHp()<=0) {
-				System.out.println("ヒーローは全滅した");
-				break;
-			}
-			
-			
-			
+		ca[0]= new Hero("勇者１",100,50,50);
+		ca[1]= new SuperHero("スーパー勇者",120,50,50);
+		ca[2]= new Magician("魔法使い",100,30,50,100);
+		if(ca[2] instanceof Magician) {
+			Magician mg = (Magician)ca[2];
+			ca[3]= new SuperMagician("スーパー魔法使い", mg);
 		}
+		
+		
+		Creature[] cr = new Creature[2];
+		cr[0]= new Monster("モンスター",100,20,50);
+		cr[1]= new SuperMonster("スーパーモンスター",150,30,50);
+		
+		
+		for(int i = 0; i<ca.length; i++) {
+			System.out.println(ca[i].getName()+"が誕生した");
+			System.out.println("名前　；" + ca[i].getName());
+			System.out.println("体力　；" + ca[i].getHp());
+			System.out.println("攻撃力　；" + ca[i].getAt());
+			System.out.println("防御力　；" + ca[i].getDf());
+			if(ca[i] instanceof Magician) {
+				Magician mg = (Magician)ca[i];
+				if(ca[i].equals(mg)){
+					System.out.println("魔力　；" + mg.getMp());
+				}
+			}else if(ca[i] instanceof SuperMagician) {
+				SuperMagician b = (SuperMagician)ca[i];
+				 if(ca[i].equals(b)) {
+						System.out.println("魔力　；" + b.getMp());
+				}
+			}
+			
+			System.out.println();	
+		}
+		
+		for(Creature cre : cr) {
+			System.out.println(cre.getName()+"が誕生した");
+			System.out.println("名前　；" + cre.getName());
+			System.out.println("体力　；" + cre.getHp());
+			System.out.println("攻撃力　；" + cre.getAt());
+			System.out.println("防御力　；" + cre.getDf());
+			System.out.println();	
+		}
+		
+		System.out.println();
+		
+		
+		ca[0].attack(cr[0]);
 		
 	}
-	static void mikata_hp(Hero h, SuperHero a,Magician mg, SuperMagician b) {
-		System.out.println(h.getName()+"の残りHP　："+h.getHp());
-		System.out.println(a.getName()+"の残りHP　："+a.getHp());
-		System.out.println(mg.getName()+"の残りHP　："+mg.getHp());
-		System.out.println(b.getName()+"の残りHP　："+b.getHp());
+	
+	
+	
+	
+	static void mikata_hp(Character[] ca) {
+		for(Character cara : ca) {
+			System.out.println(cara.getName()+"の残りHP　："+cara.getHp());
+		}
 	}
-	static void teki_hp(Monster m, SuperMonster c) {
-		System.out.println(m.getName()+"の残りHP　："+m.getHp());
-		System.out.println(c.getName()+"の残りHP　："+c.getHp());
+	
+	static void teki_hp(Creature[] cr) {
+		for(Creature cre : cr) {
+			System.out.println(cre.getName()+"の残りHP　："+cre.getHp());
+		}
 	}
-	static void hanntei(Hero h, SuperHero a,Magician mg, SuperMagician b, Monster m, SuperMonster c) {
-		
-		if(h.getHp()==0) {
-			System.out.println(h.getName()+"は倒された");
+	
+	static void hanntei(Character[] ca, Creature[] cr) {
+		for(int i = 0; i<ca.length; i++) {
+			if(ca[i].getHp()==0) {
+				System.out.println(ca[i].getName()+"は倒された");
+			}else {
+				break;
+			}
 		}
-		if(a.getHp()==0) {
-			System.out.println(a.getName()+"は倒された");
-		}
-		if(mg.getHp()==0) {
-			System.out.println(mg.getName()+"は倒された");
-		}
-		if(b.getHp()==0) {
-			System.out.println(b.getName()+"は倒された");
-		}
-		if(m.getHp()==0) {
-			System.out.println(m.getName()+"は倒された");
-		}
-		if(c.getHp()==0) {
-			System.out.println(c.getName()+"は倒された");
-		}else {
-			;
+		for(int i = 0; i<cr.length; i++) {
+			if(cr[i].getHp()==0) {
+				System.out.println(cr[i].getName()+"は倒された");
+			}else {
+				break;
+			}
 		}
 	}
 }
+

@@ -28,9 +28,12 @@ public class Magician extends Character{
 	Magician(){
 		
 	}
-	Magician(String name, int hp){
+	Magician(String name, int hp, int at,int df,int mp){
 		setName(name);
 		setHp(hp);
+		setAt(at);
+		setDf(df);
+		setMp(mp);
 	}
 	
 	

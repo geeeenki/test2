@@ -4,13 +4,19 @@ public class SuperMagician extends Magician{
 	
 	
 	SuperMagician(){
-		
+	
 	}
-	SuperMagician(Magician mg){
+	SuperMagician(String name,Magician mg){
+		setName(name);
 		setHp(mg.getHp()+10);
-		setMp(mg.getMp()+50);
 		setAt(mg.getAt()*2);
+		setDf(mg.getDf()+10);
+		setMp(mg.getMp()+50);
 		setMagicCount(mg.getMagicCount()*2);
+	}
+	SuperMagician(String name){
+		setName(name);
+		
 	}
 	
 	

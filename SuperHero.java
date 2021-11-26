@@ -7,6 +7,12 @@ public class SuperHero extends Hero {
 	SuperHero(Hero h){
 		this.superAt = h.getAt()*2;
 	}
+	SuperHero(String name, int hp, int at,int df){
+		setName(name);
+		setHp(hp);
+		setAt(at);
+		setDf(df);
+	}
 	
 	public int getSuperAt() {
 		return this.superAt;
