@@ -53,11 +53,15 @@ public abstract class Character {
 	}
 	
 	
-	public abstract void attack(Creature[] cr);
+	public abstract void attack(Creature cr);
 	public void defense() {
 		System.out.println(this.getName()+"が防御した");
 		setDf(this.getDf() + 10);
 		System.out.println(this.getName()+"の防御力が10UPし、" + this.getDf() + "になった");
 	}
+	
+	
+	
+	
 
 }

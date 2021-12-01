@@ -18,17 +18,16 @@ public class Hero extends Character{
 		setDf(df);
 	}
 
-	public void attack(Creature[] cr) {
-		if(cr[0] instanceof Monster) {
+	public void attack(Creature cr) {
 		System.out.println(this.getName() + "の攻撃!");
-		System.out.println(cr[0].getName()+"にダメージを" + getAt() + "与えた");
-		int hp = cr[0].getHp()-this.getAt();
+		System.out.println(cr.getName()+"にダメージを" + getAt() + "与えた");
+		int hp = cr.getHp()-this.getAt();
 		if(hp<=0) {
-			cr[0].setHp(0);
+			cr.setHp(0);
 		}else {
-			cr[0].setHp(hp);
+			cr.setHp(hp);
 		}
-		}
+		System.out.println();
 	}
 	
 	

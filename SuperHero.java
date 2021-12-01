@@ -17,25 +17,18 @@ public class SuperHero extends Hero {
 	public int getSuperAt() {
 		return this.superAt;
 	}
-	public void attack(Monster m){
+	public void attack(Creature cr){
 		System.out.println(this.getName() + "は2回攻撃した!");
-		System.out.println(m.getName() + "にダメージを合計" + this.getSuperAt() + "与えた");
-		int hp = m.getHp()-this.getSuperAt();
+		System.out.println(cr.getName() + "にダメージを合計" + this.getSuperAt() + "与えた");
+		int hp = cr.getHp()-this.getSuperAt();
 		if(hp<=0) {
-			m.setHp(0);
+			cr.setHp(0);
 		}else {
-			m.setHp(hp);
+			cr.setHp(hp);
 		}
+		
+		System.out.println();
 	}
-	public void attack(SuperMonster c){
-		System.out.println(this.getName() + "は2回攻撃した!");
-		System.out.println(c.getName() + "にダメージを合計" + this.getSuperAt() + "与えた");
-		int hp = c.getHp()-this.getSuperAt();
-		if(hp<=0) {
-			c.setHp(0);
-		}else{
-			c.setHp(hp);
-		}
-	}
+	
 
 }

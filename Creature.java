@@ -53,14 +53,14 @@ public abstract class Creature {
 	}
 	
 	
-	public abstract void attack(Hero h);
-	public abstract void attack(SuperHero a);
-	public abstract void attack(Magician mg);
-	public abstract void attack(SuperMagician b);
+	public abstract void attack(Character ca);
+	
 	public void defense() {
 		System.out.println(this.getName() + "は守りを固めた！");
 		setDf(this.getDf() + 10);
 		System.out.println("防御力が10上がった");
 	}
+	
+	
 
 }

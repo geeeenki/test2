@@ -37,39 +37,33 @@ public class Magician extends Character{
 	}
 	
 	
-	public void attack(Monster m) {
-		System.out.println(this.getName() + "の魔法攻撃!");
-		this.mp = this.getMp() - this.getMagicCount();
-		System.out.println(m.getName()+"にダメージを"+this.getAt()+"与えた");
-		int hp = m.getHp()-this.getAt();
-		if(hp<=0) {
-			m.setHp(0);
-		}else {
-			m.setHp(hp);
-		}
-	}
 	
-	public void attack(SuperMonster c) {
-		System.out.println(this.getName() + "の魔法攻撃!");
-		this.mp = this.getMp() - this.getMagicCount();
-		System.out.println(c.getName()+"にダメージを"+this.getAt()+"与えた");
-		int hp = c.getHp()-this.getAt();
-		if(hp<=0) {
-			c.setHp(0);
-		}else {
-			c.setHp(hp);
-		}
-	}
 	void mheal() {
 		System.out.println(this.getName() + "の回復魔法!");
 		this.mp = this.getMp() - this.getMagicCount();
 		this.hp = this.getHp() + 20;
 		System.out.println("魔法使いはHPを20回復し、" + this.hp +"になった");
+		System.out.println();
 	}
 	void heal() {
 		System.out.println(this.getName() +"が回復した");
 		this.hp = this.getHp() + 10;
 		System.out.println("HPが10回復し、"+ this.hp +"になった");
+		System.out.println();
+	}
+	@Override
+	public void attack(Creature cr) {
+		// TODO 自動生成されたメソッド・スタブ
+		System.out.println(this.getName() + "の魔法攻撃!");
+		this.mp = this.getMp() - this.getMagicCount();
+		System.out.println(cr.getName()+"にダメージを"+this.getAt()+"与えた");
+		int hp = cr.getHp()-this.getAt();
+		if(hp<=0) {
+			cr.setHp(0);
+		}else {
+			cr.setHp(hp);
+		}
+		System.out.println();
 	}
 	
 	

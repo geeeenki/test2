@@ -14,16 +14,16 @@ public class SuperMonster extends Monster{
 	
 	
 	
-	 void poison_attack(Hero h) {
+	 void poison_attack(Character ca) {
 		 if(this.poison>0) {
 			 this.poison--;
 			 System.out.println(this.getName() + "は毒攻撃した！");
-			 System.out.println(h.getName() + "に"+this.getAt() + "のダメージを与えた");
-			 int hp = h.getHp()-this.getAt();
+			 System.out.println(ca.getName() + "に"+this.getAt() + "のダメージを与えた");
+			 int hp = ca.getHp()-this.getAt();
 			 if(hp<=0) {
-				 h.setHp(0);
+				 ca.setHp(0);
 			 }else{
-				 h.setHp(hp);
+				 ca.setHp(hp);
 				 
 			 }
 			 
@@ -31,6 +31,7 @@ public class SuperMonster extends Monster{
 			 throw new IllegalArgumentException("毒攻撃出来ません。");
 			 
 		 }
+		 System.out.println();
 	}
 
 }

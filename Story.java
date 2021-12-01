@@ -55,24 +55,18 @@ public class Story {
 		System.out.println();
 		
 		
-		ca[0].attack(cr[0]);
+		Battle.battle(ca, cr);
+		
+		
 		
 	}
 	
 	
 	
 	
-	static void mikata_hp(Character[] ca) {
-		for(Character cara : ca) {
-			System.out.println(cara.getName()+"の残りHP　："+cara.getHp());
-		}
-	}
 	
-	static void teki_hp(Creature[] cr) {
-		for(Creature cre : cr) {
-			System.out.println(cre.getName()+"の残りHP　："+cre.getHp());
-		}
-	}
+	
+	
 	
 	static void hanntei(Character[] ca, Creature[] cr) {
 		for(int i = 0; i<ca.length; i++) {
